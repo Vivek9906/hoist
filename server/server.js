@@ -26,7 +26,7 @@ const io = new Server(server, {
 // Database Connection
 const connectDB = async () => {
     try {
-        const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/hoist'; // Fallback to local
+        const uri = process.env.MONGODB_URI || 'mongodb+srv://vivekbr6541_db_user:Yd8fg9VrRrh2Y9yB@hoist.j4mtdtg.mongodb.net/?appName=hoist'; // Fallback to cloud
         await mongoose.connect(uri);
         console.log('MongoDB Connected');
     } catch (err) {
