@@ -35,7 +35,8 @@ const HostSetup = () => {
             localStorage.setItem('hoist_user', JSON.stringify(user));
             localStorage.setItem('hoist_user_id', user.id); // Persist ID specifically
 
-            const res = await fetch('/api/party/create', {
+            const API_URL = import.meta.env.VITE_API_URL || '';
+            const res = await fetch(`${API_URL}/api/party/create`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

@@ -119,7 +119,8 @@ const VideoCall = ({ meetingId, user, onLeave, audioOnly = false }) => {
     useEffect(() => {
         const fetchToken = async () => {
             try {
-                const res = await fetch('/api/video/get-token');
+                const API_URL = import.meta.env.VITE_API_URL || '';
+                const res = await fetch(`${API_URL}/api/video/get-token`);
                 const data = await res.json();
                 if (data.token) {
                     setToken(data.token);

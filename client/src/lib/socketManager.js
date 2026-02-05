@@ -5,10 +5,10 @@ let socket;
 
 export const getSocket = () => {
     if (!socket) {
-        socket = io('/', {
+        const SERVER_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        socket = io(SERVER_URL, {
             path: '/socket.io',
             reconnection: true,
-            reconnectionAttempts: 5,
             reconnectionDelay: 1000,
         });
     }

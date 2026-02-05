@@ -17,6 +17,9 @@ const PartyRoom = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
     const [sidebarOpen, setSidebarOpen] = useState(true);
+
+    // API URL Helper
+    const API_URL = import.meta.env.VITE_API_URL || '';
     const [activeTab, setActiveTab] = useState('chat');
     const [messageInput, setMessageInput] = useState('');
     const [urlInput, setUrlInput] = useState('');
@@ -66,7 +69,7 @@ const PartyRoom = () => {
         if (isHost) {
             const toastId = toast.loading("Initializing Video Room...");
             try {
-                const res = await fetch('/api/video/create-meeting', { method: 'POST' });
+                const res = await fetch(`${API_URL}/api/video/create-meeting`, { method: 'POST' });
                 const data = await res.json();
 
                 if (data.meetingId) {
