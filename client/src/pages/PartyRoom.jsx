@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Share2, Users, ArrowLeft, Video, LogOut, XCircle, Mic } from 'lucide-react';
+import { Share2, Users, ArrowLeft, Video, LogOut, XCircle, Mic, PanelRightOpen, PanelRightClose } from 'lucide-react';
 import { usePartyState } from '../hooks/usePartyState';
 import { getSocket } from '../lib/socketManager';
 import WebFrame from '../components/WebFrame';
@@ -200,8 +200,14 @@ const PartyRoom = () => {
                             <LogOut className="w-4 h-4" /> <span className="hidden sm:inline">Leave</span>
                         </button>
                     )}
-                    <button onClick={copyLink} className="bg-purple-600 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-purple-500 transition-colors">
+                    <button onClick={copyLink} className="bg-purple-600 hover:bg-purple-500 p-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors">
                         <Share2 className="w-4 h-4" /> <span className="hidden sm:inline">Share</span>
+                    </button>
+                    <button
+                        onClick={() => setSidebarOpen(!sidebarOpen)}
+                        className={cn("p-2 rounded-lg transition-colors border", sidebarOpen ? "bg-purple-600 text-white border-purple-500" : "bg-gray-800 text-gray-400 border-gray-700 hover:text-white")}
+                    >
+                        {sidebarOpen ? <PanelRightClose className="w-5 h-5" /> : <PanelRightOpen className="w-5 h-5" />}
                     </button>
                 </div>
             </header>
@@ -238,7 +244,7 @@ const PartyRoom = () => {
 
                 {/* Sidebar */}
                 {sidebarOpen && (
-                    <div className="w-80 bg-gray-900 border-l border-gray-800 flex flex-col absolute md:relative right-0 h-full z-50 shadow-xl md:shadow-none transition-all duration-300">
+                    <div className="absolute inset-0 z-50 md:relative md:inset-auto w-full md:w-80 bg-gray-900 border-l border-gray-800 flex flex-col shadow-xl transition-all duration-300">
                         {/* Tabs */}
                         <div className="flex border-b border-gray-800">
                             <button

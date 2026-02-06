@@ -80,7 +80,7 @@ const MeetingView = ({ onLeave, meetingId }) => {
         <div className="flex flex-col h-full bg-gray-900">
             {/* Grid */}
             <div className="flex-1 p-4 overflow-y-auto">
-                <div className="grid grid-cols-2 gap-4 auto-rows-min">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-min">
                     {participantIds.map(participantId => (
                         <ParticipantView key={participantId} participantId={participantId} />
                     ))}

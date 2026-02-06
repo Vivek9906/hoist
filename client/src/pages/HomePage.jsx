@@ -12,7 +12,7 @@ const HomePage = () => {
                 <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-600/30 rounded-full blur-[150px] animate-pulse delay-1000" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 flex flex-col items-center justify-center min-h-screen">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 py-10 md:py-20 flex flex-col items-center justify-center min-h-screen">
 
                 {/* Hero Text */}
                 <motion.div
@@ -20,7 +20,7 @@ const HomePage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-20"
                 >
-                    <h1 className="text-7xl md:text-9xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 mb-6 drop-shadow-2xl tracking-tight">
+                    <h1 className="text-5xl md:text-7xl lg:text-9xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 mb-6 drop-shadow-2xl tracking-tight">
                         HOIST
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide">
@@ -34,7 +34,7 @@ const HomePage = () => {
                     <Link to="/host" className="group">
                         <motion.div
                             whileHover={{ scale: 1.03, rotate: -1 }}
-                            className="h-full bg-gradient-to-br from-purple-900/60 to-gray-900/60 border border-purple-500/30 p-10 rounded-[2.5rem] backdrop-blur-xl shadow-2xl shadow-purple-900/20 group-hover:shadow-purple-700/40 transition-all relative overflow-hidden"
+                            className="h-full bg-gradient-to-br from-purple-900/60 to-gray-900/60 border border-purple-500/30 p-6 md:p-10 rounded-[2.5rem] backdrop-blur-xl shadow-2xl shadow-purple-900/20 group-hover:shadow-purple-700/40 transition-all relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                                 <Plus className="w-32 h-32" />
@@ -51,7 +51,7 @@ const HomePage = () => {
                     <Link to="/join" className="group">
                         <motion.div
                             whileHover={{ scale: 1.03, rotate: 1 }}
-                            className="h-full bg-gradient-to-br from-blue-900/60 to-gray-900/60 border border-blue-500/30 p-10 rounded-[2.5rem] backdrop-blur-xl shadow-2xl shadow-blue-900/20 group-hover:shadow-blue-700/40 transition-all relative overflow-hidden"
+                            className="h-full bg-gradient-to-br from-blue-900/60 to-gray-900/60 border border-blue-500/30 p-6 md:p-10 rounded-[2.5rem] backdrop-blur-xl shadow-2xl shadow-blue-900/20 group-hover:shadow-blue-700/40 transition-all relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                                 <Users className="w-32 h-32" />
