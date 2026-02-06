@@ -18,7 +18,7 @@ const AvatarSelector = ({ selectedAvatar, onSelect }) => {
                     whileTap={{ scale: 0.9 }}
                     onClick={() => onSelect(avatar)}
                     className={cn(
-                        "text-4xl p-4 rounded-xl transition-colors bg-gray-800 border-2",
+                        "text-4xl p-4 rounded-xl transition-colors bg-gray-800 border-2 flex items-center justify-center aspect-square",
                         selectedAvatar === avatar
                             ? "border-purple-500 bg-purple-500/20 shadow-[0_0_15px_rgba(168,85,247,0.5)]"
                             : "border-transparent hover:bg-gray-700"
