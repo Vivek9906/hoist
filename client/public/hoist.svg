@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c084fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="100" height="100" rx="22" ry="22" fill="url(#grad1)" />
+
+  <!-- Inner subtle glow layer -->
+  <rect width="100" height="100" rx="22" ry="22" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+
+  <!-- Play button triangle (slightly offset right, centered vertically) -->
+  <polygon
+    points="36,30 36,70 72,50"
+    fill="white"
+    opacity="0.95"
+    filter="url(#glow)"
+  />
+
+  <!-- Upward lift bar (thin bar above the triangle, representing "hoisting") -->
+  <rect x="36" y="20" width="6" height="14" rx="3" fill="url(#grad2)" opacity="0.9"/>
+  <polygon points="33,22 39,22 36,15" fill="white" opacity="0.9"/>
+</svg>
